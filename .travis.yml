@@ -2,6 +2,10 @@ language: java
 install: true
 sudo: required
 
+branches:
+  only:
+    - trunk
+
 services:
   - docker
   
