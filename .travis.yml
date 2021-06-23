@@ -1,7 +1,8 @@
 sudo: required
 
 services:
-  - docker build -t docker-app:latest .
+  - docker
   
 script:
+  - docker build -t docker-app:latest .
   - docker run -p 8090:8090 docker-app:latest
