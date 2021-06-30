@@ -1,13 +1,11 @@
-language: java
-install: true
 sudo: required
-
-branches:
-  only:
-    - trunk
 
 services:
   - docker
   
-script:
+before_install:
   - docker build -t docker-app:latest .
+  
+script:
+  - docker -u $DOCKER_ID -p $DOCKER_PASSWORD
+  - docker push govkumardocker/docker-app
